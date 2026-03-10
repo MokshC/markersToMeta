@@ -1,5 +1,5 @@
 # markersToMeta
-Move marker names and notes to clip metadata in[BlackMagic's DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/)
+Move marker names and notes to clip metadata in [BlackMagic's DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/)
 
 ## Installing Script
 ### Steps
