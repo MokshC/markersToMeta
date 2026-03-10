@@ -22,5 +22,6 @@ Move marker names and notes to clip metadata in[BlackMagic's DaVinci Resolve](ht
 ### Steps
 1. Open a timeline in your resolve project
 2. Click “Workspace > Scripts > markersToMeta”
-3. Select the marker color, metadata items, and track you'd like to apply to.
-4. Click "Move to Metadata" and all markers that are deleted are moved to metadata. Note that if a clip has multiple markers over it, they will overwrite eachother.
+3. Select the marker color, metadata items, and track you'd like to apply to. *Note: Select "None" if you don't want it applied anywhere.*
+4. Uncheck the "Delete markers" checkbox if you want to keep markers after applying metadata.
+5. Click "Move to Metadata" and all markers that are deleted are moved to metadata. Note that if a clip has multiple markers over it, they will overwrite eachother.
