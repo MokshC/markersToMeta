@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 # Created by: Moksh Chitkara
-# Last Update: Mar 9th 2026
-# v1.1.0
+# Last Update: Mar 10th 2026
+# v1.1.1
 # Copyright (C) 2026  Moksh Chitkara
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
@@ -79,7 +79,15 @@ def get_matches(timeline, track):
     # if clip and tl are enabled append start/end to list
     if timeline.GetIsTrackEnabled("video",track):
         print("")
-        for item in timeline.GetItemListInTrack("video",track):
+        
+        track_items = timeline.GetItemListInTrack("video",track)
+        prog = 0
+        total = len(track_items)
+
+        for item in track_items:
+            prog += 1
+            loading = "{:.2%}".format(float(prog)/float(total))
+            itm['Start'].Text = "Matching Track {}: {}".format(track, loading)
             if item.GetClipEnabled() and item.GetStart():
                 for frame_id in markers:
                     if markers[frame_id]["color"] == str(itm["color_combo"].CurrentText):
@@ -106,7 +114,7 @@ def apply_meta(matches, timeline, track):
     for frame_id in sorted(matches):
         prog += 1
         loading = "{:.2%}".format(float(prog)/float(total))
-        itm['Start'].Text = "Track {}: {}".format(track, loading)
+        itm['Start'].Text = "Applying Track {}: {}".format(track, loading)
         
         print("\nWorking on", frame_id)
         
